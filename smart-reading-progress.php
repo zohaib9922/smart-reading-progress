@@ -4,10 +4,27 @@
  * Plugin URI: https://example.com
  * Description: Adds a reading progress bar and reading time estimate to posts.
  * Version: 1.0.0
- * Author: Zohaib Hassan
+ * Author: Your Name
  * License: GPL2
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
+
+function srp_enqueue_assets() {
+    wp_enqueue_style(
+        'srp-style',
+        plugin_dir_url(__FILE__) . 'assets/css/style.css'
+    );
+
+    wp_enqueue_script(
+        'srp-script',
+        plugin_dir_url(__FILE__) . 'assets/js/progress.js',
+        array(),
+        false,
+        true
+    );
+}
+
+add_action('wp_enqueue_scripts', 'srp_enqueue_assets');
