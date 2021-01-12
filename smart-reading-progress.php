@@ -28,3 +28,9 @@ function srp_enqueue_assets() {
 }
 
 add_action('wp_enqueue_scripts', 'srp_enqueue_assets');
+
+function srp_render_progress_bar() {
+    echo '<div id="srp-progress-bar"></div>';
+}
+
+add_action('wp_footer', 'srp_render_progress_bar');
