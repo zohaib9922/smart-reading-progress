@@ -7,3 +7,9 @@
     background: #2563eb;
     z-index: 9999;
 }
+
+.srp-reading-time {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #555;
+}

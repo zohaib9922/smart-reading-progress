@@ -34,3 +34,20 @@ function srp_render_progress_bar() {
 }
 
 add_action('wp_footer', 'srp_render_progress_bar');
+
+function srp_add_reading_time($content) {
+
+    if (!is_single()) {
+        return $content;
+    }
+
+    $word_count = str_word_count(strip_tags($content));
+
+    $reading_time = ceil($word_count / 200);
+
+    $reading_html = '<p class="srp-reading-time">⏱ Estimated Reading Time: ' . $reading_time . ' min</p>';
+
+    return $reading_html . $content;
+}
+
+add_filter('the_content', 'srp_add_reading_time');
