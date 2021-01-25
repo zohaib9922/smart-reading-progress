@@ -51,3 +51,5 @@ function srp_add_reading_time($content) {
 }
 
 add_filter('the_content', 'srp_add_reading_time');
+
+require_once plugin_dir_path(__FILE__) . 'includes/settings-page.php';
