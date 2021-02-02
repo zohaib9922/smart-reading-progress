@@ -53,3 +53,16 @@ function srp_add_reading_time($content) {
 add_filter('the_content', 'srp_add_reading_time');
 
 require_once plugin_dir_path(__FILE__) . 'includes/settings-page.php';
+
+function srp_custom_styles() {
+
+    $color = get_option('srp_bar_color', '#2563eb');
+
+    echo '<style>
+        #srp-progress-bar {
+            background:' . esc_attr($color) . ';
+        }
+    </style>';
+}
+
+add_action('wp_head', 'srp_custom_styles');
