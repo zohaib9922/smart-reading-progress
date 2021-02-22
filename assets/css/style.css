@@ -5,13 +5,15 @@
     width: 0;
     height: 5px;
     background: #2563eb;
-    z-index: 9999;
+    z-index: 999999;
+    transition: width 0.1s linear;
 }
 
 .srp-reading-time {
     font-size: 14px;
     margin-bottom: 15px;
     color: #555;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
